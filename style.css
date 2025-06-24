@@ -42,7 +42,7 @@ body {
 /* Judul */
 .judul {
   background: #ff0008;
-  color: black;
+  color: #ffe301;
   font-weight: bold;
   padding: 10px;
   text-align: center;
@@ -73,6 +73,7 @@ body {
 /* Tombol */
 button {
   background: #ff0008;
+  color: #ffe301;
   border: none;
   padding: 10px 20px;
   border-radius: 50px;
