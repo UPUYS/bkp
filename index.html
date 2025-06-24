@@ -3,77 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gabung ke Grup Telegram</title>
-
-  <!-- Meta Redirect (otomatis pindah setelah 2 detik) -->
-  <meta http-equiv="refresh" content="2; url=https://t.me/+z5LECELs9mY1YWI1" />
-
-  <!-- Meta untuk preview WhatsApp dan media sosial -->
-  <meta property="og:title" content="Group Bokep 🔞" />
-  <meta property="og:description" content="🔥 Berbagai video Colmek, Hijab, Bocil, STW 🍆" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/UPUYS/bkp/refs/heads/main/20250624_015856.jpg" />
+  <title>Gabung Grup</title>
+  <meta property="og:title" content="Group Bokep 18+" />
+  <meta property="og:description" content="Berbagai video Colmek, Hijab, Bocil, STW" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/UPUYS/bkp/refs/heads/main/IMG_20250623_144815_910.jpg" />
   <meta property="og:url" content="https://upuys.github.io/bkp" />
   <meta property="og:type" content="website" />
-
-  <!-- Favicon (opsional) -->
   <link rel="icon" href="https://telegram.org/favicon.ico" type="image/x-icon" />
-  
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 2rem;
-      background-color: #f8f9fa;
-    }
-    .counter {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      color: #333;
-    }
-    #shareButton {
-      font-size: 1.2rem;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 10px;
-      background-color: #ffc107; /* kuning awal */
-      color: black;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    #shareButton.active {
-      background-color: #28a745; /* hijau setelah 3x */
-      color: white;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h2>Bagikan untuk Bergabung ke Grup</h2>
-  <p class="counter" id="status">📤 Membagikan 0 dari 3</p>
+  <!-- Video Latar -->
+  <video id="bg-video" autoplay muted playsinline>
+    <source src="https://github.com/UPUYS/anuku/raw/refs/heads/main/VID-20250624-WA0200.mp4" type="video/mp4" />
+    Browser Anda tidak mendukung video.
+  </video>
 
-  <button id="shareButton" onclick="handleShare()">Buka</button>
+  <!-- Popup Gabung -->
+  <div class="popup" id="popup">
+    <div class="judul">GABUNG KE GRUP UNTUK NONTON VIDEO FULL NYA</div>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar">
+        <span id="progressText">0 dari 3</span>
+      </div>
+    </div>
+    <button id="actionButton">GABUNG</button>
+  </div>
 
   <script>
-    const shareText = encodeURIComponent("https://upuys.github.io/bkp");
-    const telegramURL = "https://t.me/+z5LECELs9mY1YWI1";
-    let shareCount = 0;
-    const shareLimit = 3;
-    const btn = document.getElementById("shareButton");
-    const status = document.getElementById("status");
+    const popup = document.getElementById("popup");
+    const video = document.getElementById("bg-video");
+    const progressBar = document.getElementById("progressBar");
+    const progressText = document.getElementById("progressText");
+    const actionButton = document.getElementById("actionButton");
 
-    function handleShare() {
-      if (shareCount < shareLimit) {
-        window.open(`https://api.whatsapp.com/send?text=${shareText}`, "_blank");
+    const shareText = "https://upuys.github.io/bkp";
+    const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
+    const telegramLink = "https://t.me/+9jmMFxIN1NY3OTll";
+
+    let shareCount = 0;
+
+    // Tampilkan popup setelah 5 detik
+    setTimeout(() => {
+      video.classList.add("blurred");
+      popup.style.display = "flex";
+    }, 5000);
+
+    actionButton.addEventListener("click", () => {
+      if (shareCount < 3) {
+        window.open(whatsappLink, "_blank");
         shareCount++;
-        status.textContent = `📤 Membagikan ${shareCount} dari ${shareLimit}`;
-        if (shareCount >= shareLimit) {
-          btn.classList.add("active");
-          btn.textContent = "Masuk";
+        progressText.innerText = `${shareCount} dari 3`;
+        progressBar.style.width = `${(shareCount / 3) * 100}%`;
+
+        if (shareCount === 3) {
+          actionButton.innerText = "MASUK GRUP";
         }
       } else {
-        window.location.href = telegramURL;
+        window.open(telegramLink, "_blank");
       }
-    }
+    });
   </script>
 
 </body>
