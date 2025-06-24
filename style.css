@@ -26,7 +26,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
+  background: #ffffff;
   border-radius: 10px;
   width: 90%;
   max-width: 350px;
@@ -41,8 +41,8 @@ body {
 
 /* Judul */
 .judul {
-  background: #ff0008;
-  color: #ffe301;
+  background: #21c063;
+  color: #ffffff;
   font-weight: bold;
   padding: 10px;
   text-align: center;
@@ -65,15 +65,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black;
+  color: #000000;
   font-weight: bold;
   transition: width 0.3s;
 }
 
 /* Tombol */
 button {
-  background: #ff0008;
-  color: #ffe301;
+  background: #2dd34b;
+  color: #ffffff;
   border: none;
   padding: 10px 20px;
   border-radius: 50px;
